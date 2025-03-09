@@ -5,71 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="flag" content="IGNITE{SURVEYS_CAN_BE_DANGEROUS}">
     <title>Social Engineering CTF Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <h1>Social Engineering CTF Questions</h1>
-    <p>Please answer the following questions:</p>
+    <p>Please answer the following questions about Acme Corp:</p>
     <form id="ctf-form" action="#" method="post">
         <ol>
             <li>
-                What is the name of the target company's CEO?
+                Who is the CEO of Acme Corp?
                 <br>
-                <input type="text" name="q1">
-                <label><input type="radio" name="q1" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q1" value="john_doe"> John Doe</label>
+                <label><input type="radio" name="q1" value="jane_smith"> Jane Smith</label>
+                <label><input type="radio" name="q1" value="alex_jones"> Alex Jones</label>
+                <label><input type="radio" name="q1" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the target employee's work email address?
+                What is the work email address of the target employee at Acme Corp?
                 <br>
-                <input type="email" name="q2">
-                <label><input type="radio" name="q2" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q2" value="employee@acme.com"> employee@acme.com</label>
+                <label><input type="radio" name="q2" value="target@acme.com"> target@acme.com</label>
+                <label><input type="radio" name="q2" value="contact@acme.com"> contact@acme.com</label>
+                <label><input type="radio" name="q2" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the physical address of the target company's headquarters?
+                Where is the headquarters of Acme Corp located?
                 <br>
-                <input type="text" name="q3">
-                <label><input type="radio" name="q3" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q3" value="123_acme_street"> 123 Acme Street</label>
+                <label><input type="radio" name="q3" value="456_example_road"> 456 Example Road</label>
+                <label><input type="radio" name="q3" value="789_demo_lane"> 789 Demo Lane</label>
+                <label><input type="radio" name="q3" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the target employee's job title?
+                What is the job title of the target employee at Acme Corp?
                 <br>
-                <input type="text" name="q4">
-                <label><input type="radio" name="q4" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q4" value="manager"> Manager</label>
+                <label><input type="radio" name="q4" value="developer"> Developer</label>
+                <label><input type="radio" name="q4" value="designer"> Designer</label>
+                <label><input type="radio" name="q4" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the direct phone number of the target company's IT department?
+                What is the direct phone number of Acme Corp's IT department?
                 <br>
-                <input type="text" name="q5">
-                <label><input type="radio" name="q5" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q5" value="123-456-7890"> 123-456-7890</label>
+                <label><input type="radio" name="q5" value="098-765-4321"> 098-765-4321</label>
+                <label><input type="radio" name="q5" value="555-123-4567"> 555-123-4567</label>
+                <label><input type="radio" name="q5" value="idk"> I don't know</label>
             </li>
             <li>
                 What is the target employee's favorite social media platform?
                 <br>
-                <input type="text" name="q6">
-                <label><input type="radio" name="q6" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q6" value="facebook"> Facebook</label>
+                <label><input type="radio" name="q6" value="twitter"> Twitter</label>
+                <label><input type="radio" name="q6" value="linkedin"> LinkedIn</label>
+                <label><input type="radio" name="q6" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the target company's customer service hotline number?
+                What is the customer service hotline number for Acme Corp?
                 <br>
-                <input type="text" name="q7">
-                <label><input type="radio" name="q7" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q7" value="800-123-4567"> 800-123-4567</label>
+                <label><input type="radio" name="q7" value="800-765-4321"> 800-765-4321</label>
+                <label><input type="radio" name="q7" value="800-555-7890"> 800-555-7890</label>
+                <label><input type="radio" name="q7" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the date of the target company's founding?
+                When was Acme Corp founded?
                 <br>
-                <input type="date" name="q8">
-                <label><input type="radio" name="q8" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q8" value="2000"> 2000</label>
+                <label><input type="radio" name="q8" value="1990"> 1990</label>
+                <label><input type="radio" name="q8" value="1985"> 1985</label>
+                <label><input type="radio" name="q8" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the target employee's department within the company?
+                Which department does the target employee work in at Acme Corp?
                 <br>
-                <input type="text" name="q9">
-                <label><input type="radio" name="q9" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q9" value="hr"> HR</label>
+                <label><input type="radio" name="q9" value="it"> IT</label>
+                <label><input type="radio" name="q9" value="marketing"> Marketing</label>
+                <label><input type="radio" name="q9" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the target company's most recent public project or announcement?
+                What is Acme Corp's most recent public project or announcement?
                 <br>
-                <input type="text" name="q10">
-                <label><input type="radio" name="q10" value="iwtt"> I won't tell you</label>
+                <label><input type="radio" name="q10" value="project_alpha"> Project Alpha</label>
+                <label><input type="radio" name="q10" value="announcement_beta"> Announcement Beta</label>
+                <label><input type="radio" name="q10" value="launch_gamma"> Launch Gamma</label>
+                <label><input type="radio" name="q10" value="idk"> I don't know</label>
             </li>
         </ol>
         <button type="submit">Submit</button>
@@ -80,7 +113,7 @@
             event.preventDefault();
             var allSelected = true;
             for (var i = 1; i <= 10; i++) {
-                if (document.querySelector('input[name="q' + i + '"]:checked').value !== 'iwtt') {
+                if (document.querySelector('input[name="q' + i + '"]:checked').value !== 'idk') {
                     allSelected = false;
                     break;
                 }
@@ -94,4 +127,5 @@
     </script>
 </body>
 </html>
+
 
