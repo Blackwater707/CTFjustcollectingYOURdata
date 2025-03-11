@@ -23,23 +23,85 @@
     <p>Please answer the following questions about Acme Corp:</p>
     <form id="ctf-form" action="#" method="post">
         <ol>
-            <li> Who is the CEO of Acme Corp? <br>
+            <li>
+                Who is the CEO of Acme Corp?
+                <br>
                 <label><input type="radio" name="q1" value="john_doe"> John Doe</label>
                 <label><input type="radio" name="q1" value="jane_smith"> Jane Smith</label>
                 <label><input type="radio" name="q1" value="alex_jones"> Alex Jones</label>
                 <label><input type="radio" name="q1" value="idk"> I don't know</label>
             </li>
-            <li> What is the work email address of the target employee at Acme Corp? <br>
+            <li>
+                What is the work email address of the target employee at Acme Corp?
+                <br>
                 <label><input type="radio" name="q2" value="employee@acme.com"> employee@acme.com</label>
                 <label><input type="radio" name="q2" value="target@acme.com"> target@acme.com</label>
                 <label><input type="radio" name="q2" value="contact@acme.com"> contact@acme.com</label>
                 <label><input type="radio" name="q2" value="idk"> I don't know</label>
             </li>
-            <li> Where is the headquarters of Acme Corp located? <br>
+            <li>
+                Where is the headquarters of Acme Corp located?
+                <br>
                 <label><input type="radio" name="q3" value="123_acme_street"> 123 Acme Street</label>
                 <label><input type="radio" name="q3" value="456_example_road"> 456 Example Road</label>
                 <label><input type="radio" name="q3" value="789_demo_lane"> 789 Demo Lane</label>
                 <label><input type="radio" name="q3" value="idk"> I don't know</label>
+            </li>
+            <li>
+                What is the job title of the target employee at Acme Corp?
+                <br>
+                <label><input type="radio" name="q4" value="manager"> Manager</label>
+                <label><input type="radio" name="q4" value="developer"> Developer</label>
+                <label><input type="radio" name="q4" value="designer"> Designer</label>
+                <label><input type="radio" name="q4" value="idk"> I don't know</label>
+            </li>
+            <li>
+                What is Acme Corp's official support phone number?
+                <br>
+                <label><input type="radio" name="q5" value="555-1234"> 555-1234</label>
+                <label><input type="radio" name="q5" value="555-5678"> 555-5678</label>
+                <label><input type="radio" name="q5" value="555-9101"> 555-9101</label>
+                <label><input type="radio" name="q5" value="idk"> I don't know</label>
+            </li>
+            <li>
+                What is the internal project name of Acme Corp's latest product?
+                <br>
+                <label><input type="radio" name="q6" value="project_x"> Project X</label>
+                <label><input type="radio" name="q6" value="apollo"> Apollo</label>
+                <label><input type="radio" name="q6" value="phoenix"> Phoenix</label>
+                <label><input type="radio" name="q6" value="idk"> I don't know</label>
+            </li>
+            <li>
+                Who is the lead security engineer at Acme Corp?
+                <br>
+                <label><input type="radio" name="q7" value="alice_johnson"> Alice Johnson</label>
+                <label><input type="radio" name="q7" value="bob_miller"> Bob Miller</label>
+                <label><input type="radio" name="q7" value="charlie_smith"> Charlie Smith</label>
+                <label><input type="radio" name="q7" value="idk"> I don't know</label>
+            </li>
+            <li>
+                What is Acme Corp’s VPN hostname?
+                <br>
+                <label><input type="radio" name="q8" value="vpn.acme.com"> vpn.acme.com</label>
+                <label><input type="radio" name="q8" value="secure.acme.com"> secure.acme.com</label>
+                <label><input type="radio" name="q8" value="access.acme.com"> access.acme.com</label>
+                <label><input type="radio" name="q8" value="idk"> I don't know</label>
+            </li>
+            <li>
+                What brand of security cameras does Acme Corp use?
+                <br>
+                <label><input type="radio" name="q9" value="hikvision"> Hikvision</label>
+                <label><input type="radio" name="q9" value="axis"> Axis</label>
+                <label><input type="radio" name="q9" value="dahua"> Dahua</label>
+                <label><input type="radio" name="q9" value="idk"> I don't know</label>
+            </li>
+            <li>
+                What is Acme Corp’s Wi-Fi SSID?
+                <br>
+                <label><input type="radio" name="q10" value="acme_guest"> ACME_GUEST</label>
+                <label><input type="radio" name="q10" value="acme_corp_secure"> ACME_CORP_SECURE</label>
+                <label><input type="radio" name="q10" value="acme_wifi"> ACME_WIFI</label>
+                <label><input type="radio" name="q10" value="idk"> I don't know</label>
             </li>
         </ol>
     </form>
@@ -47,28 +109,21 @@
     <p id="flag" style="display:none;"></p>
 
     <script>
-        // Base64-encoded flag (IGNITE{SURVEYS_CAN_BE_DANGEROUS})
+        // Base64 encoded flag
         var encodedFlag = "SUdOSVRFe1NVUlZFWVNfQ0FOX0JFX0RBTkdFUk9VU30=";
-
-        function decodeFlag() {
-            return atob(encodedFlag);
-        }
-
-        // Reveal flag function
+        
+        // Decode and display the flag when needed
         function revealFlag() {
-            document.getElementById('flag').textContent = decodeFlag();
+            document.getElementById('flag').textContent = atob(encodedFlag);
             document.getElementById('flag').style.display = 'block';
         }
-
-        // Just an example to trigger flag reveal when needed
-        document.addEventListener("keydown", function(event) {
-            if (event.ctrlKey && event.key === "f") { // Example: CTRL + F to reveal
-                revealFlag();
-            }
-        });
     </script>
+
+    <button onclick="revealFlag()">Reveal Flag</button>
+
 </body>
 </html>
+
 
 
 
