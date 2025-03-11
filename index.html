@@ -41,12 +41,6 @@
                 <label><input type="radio" name="q3" value="789_demo_lane"> 789 Demo Lane</label>
                 <label><input type="radio" name="q3" value="idk"> I don't know</label>
             </li>
-            <li> What is the job title of the target employee at Acme Corp? <br>
-                <label><input type="radio" name="q4" value="manager"> Manager</label>
-                <label><input type="radio" name="q4" value="developer"> Developer</label>
-                <label><input type="radio" name="q4" value="designer"> Designer</label>
-                <label><input type="radio" name="q4" value="idk"> I don't know</label>
-            </li>
         </ol>
     </form>
 
@@ -60,11 +54,18 @@
             return atob(encodedFlag);
         }
 
-        // Display the flag when needed
+        // Reveal flag function
         function revealFlag() {
             document.getElementById('flag').textContent = decodeFlag();
             document.getElementById('flag').style.display = 'block';
         }
+
+        // Just an example to trigger flag reveal when needed
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.key === "f") { // Example: CTRL + F to reveal
+                revealFlag();
+            }
+        });
     </script>
 </body>
 </html>
