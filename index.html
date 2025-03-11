@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            text-align: center;
         }
         h1 {
             color: #333;
@@ -16,12 +18,19 @@
             display: block;
             margin: 10px 0;
         }
+        #flag {
+            display: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Social Engineering CTF Questions</h1>
     <p>Please answer the following questions about Acme Corp:</p>
-    <form id="ctf-form" action="#" method="post">
+    <form id="ctf-form">
         <ol>
             <li>
                 Who is the CEO of Acme Corp?
@@ -56,71 +65,78 @@
                 <label><input type="radio" name="q4" value="idk"> I don't know</label>
             </li>
             <li>
-                What is Acme Corp's official support phone number?
+                What is the customer support phone number of Acme Corp?
                 <br>
-                <label><input type="radio" name="q5" value="555-1234"> 555-1234</label>
-                <label><input type="radio" name="q5" value="555-5678"> 555-5678</label>
-                <label><input type="radio" name="q5" value="555-9101"> 555-9101</label>
+                <label><input type="radio" name="q5" value="1234567890"> 123-456-7890</label>
+                <label><input type="radio" name="q5" value="9876543210"> 987-654-3210</label>
+                <label><input type="radio" name="q5" value="5551234567"> 555-123-4567</label>
                 <label><input type="radio" name="q5" value="idk"> I don't know</label>
             </li>
             <li>
-                What is the internal project name of Acme Corp's latest product?
+                How many employees work at Acme Corp?
                 <br>
-                <label><input type="radio" name="q6" value="project_x"> Project X</label>
-                <label><input type="radio" name="q6" value="apollo"> Apollo</label>
-                <label><input type="radio" name="q6" value="phoenix"> Phoenix</label>
+                <label><input type="radio" name="q6" value="100"> 100</label>
+                <label><input type="radio" name="q6" value="500"> 500</label>
+                <label><input type="radio" name="q6" value="1000"> 1000</label>
                 <label><input type="radio" name="q6" value="idk"> I don't know</label>
             </li>
             <li>
-                Who is the lead security engineer at Acme Corp?
+                Who founded Acme Corp?
                 <br>
-                <label><input type="radio" name="q7" value="alice_johnson"> Alice Johnson</label>
-                <label><input type="radio" name="q7" value="bob_miller"> Bob Miller</label>
-                <label><input type="radio" name="q7" value="charlie_smith"> Charlie Smith</label>
+                <label><input type="radio" name="q7" value="alice"> Alice</label>
+                <label><input type="radio" name="q7" value="bob"> Bob</label>
+                <label><input type="radio" name="q7" value="charlie"> Charlie</label>
                 <label><input type="radio" name="q7" value="idk"> I don't know</label>
             </li>
             <li>
-                What is Acme Corp’s VPN hostname?
+                When was Acme Corp established?
                 <br>
-                <label><input type="radio" name="q8" value="vpn.acme.com"> vpn.acme.com</label>
-                <label><input type="radio" name="q8" value="secure.acme.com"> secure.acme.com</label>
-                <label><input type="radio" name="q8" value="access.acme.com"> access.acme.com</label>
+                <label><input type="radio" name="q8" value="1990"> 1990</label>
+                <label><input type="radio" name="q8" value="2000"> 2000</label>
+                <label><input type="radio" name="q8" value="2010"> 2010</label>
                 <label><input type="radio" name="q8" value="idk"> I don't know</label>
             </li>
             <li>
-                What brand of security cameras does Acme Corp use?
+                What is the annual revenue of Acme Corp?
                 <br>
-                <label><input type="radio" name="q9" value="hikvision"> Hikvision</label>
-                <label><input type="radio" name="q9" value="axis"> Axis</label>
-                <label><input type="radio" name="q9" value="dahua"> Dahua</label>
+                <label><input type="radio" name="q9" value="1M"> $1M</label>
+                <label><input type="radio" name="q9" value="5M"> $5M</label>
+                <label><input type="radio" name="q9" value="10M"> $10M</label>
                 <label><input type="radio" name="q9" value="idk"> I don't know</label>
             </li>
             <li>
-                What is Acme Corp’s Wi-Fi SSID?
+                How many offices does Acme Corp have worldwide?
                 <br>
-                <label><input type="radio" name="q10" value="acme_guest"> ACME_GUEST</label>
-                <label><input type="radio" name="q10" value="acme_corp_secure"> ACME_CORP_SECURE</label>
-                <label><input type="radio" name="q10" value="acme_wifi"> ACME_WIFI</label>
+                <label><input type="radio" name="q10" value="5"> 5</label>
+                <label><input type="radio" name="q10" value="10"> 10</label>
+                <label><input type="radio" name="q10" value="20"> 20</label>
                 <label><input type="radio" name="q10" value="idk"> I don't know</label>
             </li>
         </ol>
+        <button type="button" onclick="checkAnswers()">Submit</button>
     </form>
 
-    <p id="flag" style="display:none;"></p>
+    <p id="flag"></p>
 
     <script>
-        // Base64 encoded flag
-        var encodedFlag = "SUdOSVRFe1NVUlZFWVNfQ0FOX0JFX0RBTkdFUk9VU30=";
-        
-        // Decode and display the flag when needed
-        function revealFlag() {
-            document.getElementById('flag').textContent = atob(encodedFlag);
-            document.getElementById('flag').style.display = 'block';
+        function checkAnswers() {
+            let correctAnswers = true;
+            for (let i = 1; i <= 10; i++) {
+                let selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!selected || selected.value !== "idk") {
+                    correctAnswers = false;
+                    break;
+                }
+            }
+            if (correctAnswers) {
+                let encodedFlag = "SUdOSVRFe1NVUlZFWVNfQ0FOX0JFX0RBTkdFUk9VU30="; // Base64 encoded flag
+                document.getElementById("flag").textContent = atob(encodedFlag);
+                document.getElementById("flag").style.display = "block";
+            } else {
+                alert("Incorrect answers. Try again.");
+            }
         }
     </script>
-
-    <button onclick="revealFlag()">Reveal Flag</button>
-
 </body>
 </html>
 
