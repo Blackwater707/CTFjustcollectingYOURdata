@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="flag" content="IGNITE{SURVEYS_CAN_BE_DANGEROUS}">
     <title>Social Engineering CTF Questions</title>
     <style>
         body {
@@ -107,8 +106,19 @@
         </ol>
         <button type="submit">Submit</button>
     </form>
-    <p id="flag" style="display:none;">IGNITE{SURVEYS_CAN_BE_DANGEROUS}</p>
     <script>
+        // Obfuscate the flag
+        function decodeFlag(encodedFlag) {
+            let decodedFlag = '';
+            for (let i = 0; i < encodedFlag.length; i++) {
+                decodedFlag += String.fromCharCode(encodedFlag.charCodeAt(i) - 1);
+            }
+            return decodedFlag;
+        }
+
+        var encodedFlag = "JOHJUf{TVSWFZT_CBO_CF_EBOHFSO}";
+        var flag = decodeFlag(encodedFlag);
+
         document.getElementById('ctf-form').onsubmit = function(event) {
             event.preventDefault();
             var allSelected = true;
@@ -119,7 +129,7 @@
                 }
             }
             if (allSelected) {
-                document.getElementById('flag').style.display = 'block';
+                alert("Flag: " + flag); // Show the decoded flag
             } else {
                 alert('Incorrect answers. Please try again.');
             }
@@ -127,5 +137,7 @@
     </script>
 </body>
 </html>
+
+
 
 
